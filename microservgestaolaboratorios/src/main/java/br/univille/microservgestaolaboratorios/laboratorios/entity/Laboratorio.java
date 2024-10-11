@@ -1,8 +1,15 @@
 package br.univille.microservgestaolaboratorios.laboratorios.entity;
 
 import java.util.UUID;
-
+import org.springframework.data.annotation.Id;
+import com.azure.spring.data.cosmos.core.mapping.Container;
+import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
+import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
+@Container(containerName = "laboratorio", autoCreateContainer = true)
 public class Laboratorio {
+    @Id
+    @PartitionKey
+    @GeneratedValue
     private UUID id;
     private Sala sala;
     private int capacidade;
