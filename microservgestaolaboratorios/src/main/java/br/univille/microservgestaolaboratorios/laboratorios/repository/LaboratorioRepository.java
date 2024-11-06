@@ -5,9 +5,9 @@ import java.util.UUID;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import br.univille.microservgestaolaboratorios.laboratorios.entity.Agendamento;
+import br.univille.microservgestaolaboratorios.laboratorios.entity.Laboratorio;
 
 @Repository
-public interface AgendamentoRepository extends CrudRepository<Agendamento,UUID>{
+public interface LaboratorioRepository extends CrudRepository<Laboratorio,UUID>{
     
 }
