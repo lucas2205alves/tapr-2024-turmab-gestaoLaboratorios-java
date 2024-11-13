@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpClientErrorException.NotFound;
 
 import br.univille.microservgestaolaboratorios.laboratorios.entity.Laboratorio;
 import br.univille.microservgestaolaboratorios.laboratorios.service.LaboratorioService;
