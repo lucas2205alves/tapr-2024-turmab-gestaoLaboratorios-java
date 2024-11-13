@@ -9,4 +9,7 @@ public interface LaboratorioService {
     List<Laboratorio> getAll();
     Laboratorio save(Laboratorio laboratorio);
     
+
+    Laboratorio update(String id, Laboratorio laboratorio);
+    Laboratorio delete(String id);
 }

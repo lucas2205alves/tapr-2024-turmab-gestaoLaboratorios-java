@@ -3,13 +3,9 @@ package br.univille.microservgestaolaboratorios.laboratorios.entity;
 import java.util.Date;
 import java.util.UUID;
 import org.springframework.data.annotation.Id;
-import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
-import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
-@Container(containerName = "agendamento", autoCreateContainer = true)
 public class Agendamento {
     @Id
-    @PartitionKey
     @GeneratedValue
     private UUID id;
     private UUID laboratorio;
