@@ -27,4 +27,25 @@ public class LaboratorioServiceImpl implements LaboratorioService{
     public Laboratorio save(Laboratorio laboratorio) {
         return repository.save(laboratorio);
     }
+
+    @Override
+    public Laboratorio update(String id, Laboratorio laboratorio) {
+       var buscaLaboratorioAntigo = repository.findById(id);
+       if(buscaLaboratorioAntigo.isPresent()){
+            var laboratorioAntigo = buscaLaboratorioAntigo.get();
+            laboratorioAntigo.setCapacidade(laboratorio.getCapacidade());
+            repository.save(laboratorioAntigo);
+       }
+    }
+
+    @Override
+    public Laboratorio delete(String id) {
+        var buscaLaboratorioAntigo = repository.findById(id);
+       if(buscaLaboratorioAntigo.isPresent()){
+            var laboratorioAntigo = buscaLaboratorioAntigo.get();
+            repository.delete(laboratorioAntigo.get());
+            return laboratorioAntigo;
+       }
+       return null;
+    }
 }
