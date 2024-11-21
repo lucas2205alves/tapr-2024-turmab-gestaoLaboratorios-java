@@ -1,20 +1,19 @@
 package br.univille.microservgestaolaboratorios.laboratorios.entity;
 
-import java.util.UUID;
 import org.springframework.data.annotation.Id;
 import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
 public class Manutencao {
     @Id
     @GeneratedValue
-    private UUID id;
+    private String id;
     private Sala sala;
     private String descricao;
     private Boolean concluido;
     
-    public UUID getId() {
+    public String getId() {
         return id;
     }
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
     public Sala getSala() {

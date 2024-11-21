@@ -27,4 +27,26 @@ public class SalaServiceImpl implements SalaService {
     public Sala save(Sala sala) {
         return repository.save(sala);
     }
+    @Override
+    public Sala update(String id, Sala sala) {
+       var buscaAntigo = repository.findById(id);
+       if(buscaAntigo.isPresent()){
+            var Antigo = buscaAntigo.get();
+            Antigo.setSala(sala.getSala());
+            repository.save(Antigo);
+       }
+       return null;
+    }
+
+
+    @Override
+    public Sala delete(String id) {
+        var buscaAntigo = repository.findById(id);
+       if(buscaAntigo.isPresent()){
+            var Antigo = buscaAntigo.get();
+            repository.delete(Antigo);
+            return Antigo;
+       }
+       return null;
+    }
 }

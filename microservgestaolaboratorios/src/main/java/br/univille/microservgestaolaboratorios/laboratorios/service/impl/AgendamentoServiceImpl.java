@@ -29,4 +29,36 @@ public class AgendamentoServiceImpl implements AgendamentoService{
         public Agendamento save(Agendamento agendamento) {
             return repository.save(agendamento);
         }
+        @Override
+        public Agendamento update(String id, Agendamento agendamento) {
+           var buscaAntigo = repository.findById(id);
+           if(buscaAntigo.isPresent()){
+                var Antigo = buscaAntigo.get();
+                Antigo.setControleAulas(agendamento.getControleAulas());
+                Antigo.setDataFinal(agendamento.getDataFinal());
+                Antigo.setDataInicio(agendamento.getDataInicio());
+                Antigo.setDisciplina(agendamento.getDisciplina());
+                Antigo.setGestaoCursosDisciplinas(agendamento.getGestaoCursosDisciplinas());
+                Antigo.setLaboratorio(agendamento.getLaboratorio());
+                Antigo.setHorarioFinal(agendamento.getHorarioFinal());
+                Antigo.setHorarioInicio(agendamento.getHorarioInicio());
+                Antigo.setLaboratorio(agendamento.getLaboratorio());
+                Antigo.setNumeroAlunos(agendamento.getNumeroAlunos());
+                Antigo.setProfessor(agendamento.getProfessor());
+                repository.save(Antigo);
+           }
+           return null;
+        }
+    
+    
+        @Override
+        public Agendamento delete(String id) {
+            var buscaAntigo = repository.findById(id);
+           if(buscaAntigo.isPresent()){
+                var Antigo = buscaAntigo.get();
+                repository.delete(Antigo);
+                return Antigo;
+           }
+           return null;
+        }
     }

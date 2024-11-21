@@ -7,7 +7,7 @@ import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
 public class Agendamento {
     @Id
     @GeneratedValue
-    private UUID id;
+    private String id;
     private UUID laboratorio;
     private Date dataInicio;
     private Date dataFinal;
@@ -18,10 +18,10 @@ public class Agendamento {
     private String disciplina;
     private UUID ControleAulas;
     private UUID GestaoCursosDisciplinas;
-    public UUID getId() {
+    public String getId() {
         return id;
     }
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
     public UUID getLaboratorio() {
