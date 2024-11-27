@@ -1,0 +1,8 @@
+version: 1
+common:
+  resourcesPath: ./components/
+apps:
+  - appID: tapr-2024-NOMEDOMICROSERVICO-java
+    appDirPath: ./target/
+    appPort: 8080
+    command: ["java", "-jar", "NOMEDOARQUIVOJARCOMOPROJETO-SNAPSHOT.jar"]
